@@ -1,0 +1,45 @@
+html
+
+head 
+    title Welcome to the server 
+
+div#main
+
+    div#links
+            a(href= "/home") Home 
+            |
+            |
+            a(href="/users") Users
+            |
+            |
+            if (session.logedin === true)
+                a(href="/orderform.html") Order food
+                |
+                |
+                a(href="/users/" + session.usrid) View Profile
+                |
+                |
+                button(id="logout", onclick="logout()") Logout
+            else 
+                a(href="/register") Register
+                a(href="/login.html") Login
+    
+    h1#welcome Welcome to the restaurant ordering system
+
+    //- if (session.logedin === false || session.logedin === undefined)
+    //-     div#logger
+    //-         h4 Please login to get started:
+    //-         p Username :
+    //-            input#username(type="textbox", required)
+    //-         p Password :
+    //-             input#password(type="password", required)
+    //-         button(id="login", onclick="login()") Log in
+
+    if (session.logedin === true)
+        h4#welcome Welcome #{session.username} !
+        
+
+    style
+        include links.css
+    script 
+        include logger.js

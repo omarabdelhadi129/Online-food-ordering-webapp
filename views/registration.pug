@@ -1,0 +1,36 @@
+html
+
+head 
+    title Registration
+
+div#main
+    div#links
+        a(href= "/home") Home 
+        |
+        |
+        a(href="/users") Users
+        |
+        |
+        a(href="/register") Register
+        |
+        | 
+        a(href="/login.html") Login
+
+    //- h4 Log in
+    //-     p Username :
+    //-         input#username(type="textbox", required)
+    //-     p Password :
+    //-         input#password(type="password", required)
+    //-     button(id="login", onclick="login()") Log in
+
+    h4 Register:
+        p Username
+            input#usernameR(type="textbox", required)
+        p Password :
+            input#passwordR(type="password", required)
+        button(id="register", onclick="registerUser()") Register
+
+    style
+        include links.css
+    script 
+        include logger.js

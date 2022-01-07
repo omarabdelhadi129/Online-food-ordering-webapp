@@ -1,0 +1,24 @@
+h2 Order number: #{order.id}
+br
+h5 Order placed by: #{user}
+br 
+h3 Here are the contents of the order: 
+    br      
+    h4 #{order.restaurantName} (#{order.restaurantID})
+    - let items = Object.values(order.order)
+    for x in items
+        h4 #{x.quantity} x #{x.name}
+        br
+    -let subtotal = parseFloat(order.subtotal).toFixed(2)
+    h4 Subtotal: $#{subtotal}
+    -let tax = parseFloat(order.tax).toFixed(2)
+    h4 Tax: $#{order.tax}
+    -let fee = parseFloat(order.fee).toFixed(2)
+    h4 Delivery: $#{fee} 
+    -let total = parseFloat(order.total).toFixed(2)
+    h4 Total: $#{total}
+
+
+a(href= "/home") Back to homepage 
+
+

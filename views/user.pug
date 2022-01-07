@@ -1,0 +1,52 @@
+head 
+    title Welcome to the server 
+
+div#main
+
+    div#links
+
+        a(href= "/home") Home 
+        |
+        |
+        a(href="/users") Users
+        |
+        |
+        if (session.logedin === true)
+            a(href="/orderform.html") Order food
+            |
+            |
+            a(href="/users/" + session.usrid) View Profile
+            |
+            |
+            button(id="logout", onclick="logout()") Logout
+        else 
+            a(href="/register") Register
+            a(href="/login.html") Login
+
+    h1 Profile for: #{user} 
+
+
+    div#modify
+        if session.usrid === id && session.logedin == true 
+            h5 Private mode 
+            form(method='POST' action='/updatePriv')
+                div.form-group
+                    label(for='true') On:
+                    input#private.form-control(type='radio', name='choice', value="true")
+                    br
+                    label(for='false') Off:
+                    input#public.form-control(type='radio',  name='choice', value="false")
+                    br
+                    button.btn.btn-primary(type='submit') Save
+
+    h3 Order Summary:
+        br
+        for o in order
+            -iD = o.id.toString()
+            a(href="/orders/" + iD) #{iD} 
+            br 
+
+    style
+        include links.css
+    script 
+        include logger.js

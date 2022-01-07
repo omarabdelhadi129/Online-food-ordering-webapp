@@ -1,0 +1,37 @@
+html
+
+head 
+    title Welcome to the server 
+
+div#main
+
+    div#links
+            a(href= "/home") Home 
+            |
+            |
+            a(href="/users") Users
+            |
+            |
+            if (session.logedin === true)
+                a(href="/orderform.html") Order food
+                |
+                |
+                a(href="/users/" + session.usrid) View Profile
+                |
+                |
+                button(id="logout", onclick="logout()") Logout
+            else 
+                a(href="/register") Register
+                a(href="/login.html") Login
+    
+    h3 Here is a list of all users: 
+    
+    for usr in arr
+        -id = usr["_id"].toString();
+         a(href="/users/" + id) #{usr.username}
+         br
+
+    style 
+        include links.css
+    script 
+        include logger.js

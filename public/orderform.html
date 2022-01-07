@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<title>Order Form</title>
+		<style>
+			.column {
+				float: left;
+			}
+
+			.left{
+				width: 10%;
+			}
+			
+			.right {
+				width: 25%;
+			}
+
+			.middle {
+				width: 65%;
+			}
+
+		</style>
+	</head>
+	
+	<body onload="init()">
+		<a id="links", href="/home">Home</a>
+		<a id="links", href=" http://127.0.0.1:3000/users">Users</a>
+		<a id="links", href=" http://127.0.0.1:3000/users">View Profile</a>
+		<button id="links" 
+    		onclick="window.location.href = '/logout';">
+        	Logout
+    	</button>
+		<br>
+		<select id="restaurant-select"></select>
+		<br><br>
+		<div id="info"></div>
+		<div id="main">
+			<div class="column left" id="left"></div>
+			<div class="column middle" id="middle"></div>
+			<div class="column right" id="right"></div>
+		</div>
+	
+		<script src="orderform.js"></script>
+	</body>
+
+</html>

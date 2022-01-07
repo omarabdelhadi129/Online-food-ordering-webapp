@@ -1,0 +1,3 @@
+Omar Abdelhadi 101182132omarabdelhadi@cmail.carleton.caIn order to run this code you will have to follow the following steps: 1. Open your terminal and change your directory to where the file is located 2. Type the following into the terminal “npm install”, this will install all packages needed
+3. Make sure the mongo Damon is running pretty sure you know how to run that 
+4  After that please run my database-initializer.js as I have made some modifications you can run it       by "node database-initializer.js" 5. Start the server by typing the following “npm start” which will execute "node server.js"

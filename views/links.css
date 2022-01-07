@@ -1,0 +1,22 @@
+a {
+    text-decoration: none;
+    margin-left: 20px;
+}
+a:link, a:visited {
+    color: blue;
+}
+a:hover {
+    color: red;
+}
+
+#links{
+    text-align: center;
+}
+
+#welcome{
+    text-align: center;
+}
+#logout{
+    text-decoration: none;
+    margin-left: 20px;
+}
